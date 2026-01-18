@@ -88,12 +88,13 @@
         width: 31%;
         font-size: 16px;
         border-radius: 6px;
-        padding-left: 3px;
+        padding-left: 3px;  
+        border: 0.5px solid #00000069;
     }
 
     .dateOfBirthBox>select:focus {
         outline: none;
-        border: 1px solid #0866ff;
+        border: 0.5px solid #0866ff;
     }
 
     .genderBox {
@@ -106,7 +107,7 @@
     .male,
     .female,
     .other {
-        border: 0.5px solid gray;
+        border: 0.5px solid rgba(0, 0, 0, 0.459);
         width: 30%;
         display: flex;
         align-items: center;
