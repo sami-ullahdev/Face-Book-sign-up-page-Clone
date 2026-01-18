@@ -8,3 +8,11 @@ let year = document.getElementById("year");
 let genders = document.getElementById("genders");
 let email = document.getElementById("email");
 let submitbtn = document.getElementById("submitbtn");
+
+function Alert(icon, title, text) {
+    Swal.fire({
+        icon: icon,
+        title: title,
+        text: text,
+    });
+}
