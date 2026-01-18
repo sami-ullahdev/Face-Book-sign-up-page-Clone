@@ -17,4 +17,22 @@ function Alert(icon, title, text) {
     });
 }
 
+
+function submitHandler() {
+    if (firstname.value.trim() == "") {
+        Alert("error" , "" , "Enter Your First Name")
+        return
+    }
+
+    if (lastname.value.trim() == "") {
+        Alert("error" , "" , "Enter Your Last Name")
+        return
+    }
+    
+    if (day.value.trim() == "") {
+        Alert("error" , "" , "Wnter Date")
+        return
+    }
+}
+
 submitbtn.addEventListener("click", submitHandler);
