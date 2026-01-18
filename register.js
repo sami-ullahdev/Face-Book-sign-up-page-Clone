@@ -16,3 +16,5 @@ function Alert(icon, title, text) {
         text: text,
     });
 }
+
+submitbtn.addEventListener("click", submitHandler);
