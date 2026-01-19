@@ -27,22 +27,22 @@ function submitHandler() {
     if (lastname.value.trim() == "") {
         ShowAlert("error", "Enter Your Last Name")
         return
-    }
+    };
 
     if (day.value.trim() == "") {
         ShowAlert("error", "Enter Date")
         return
-    }
+    };
 
     if (month.value.trim() == "") {
         ShowAlert("error", "Enter Month")
         return
-    }
+    };
 
     if (year.value.trim() == "") {
         ShowAlert("error", "Enter Year")
         return
-    }
+    };
 
     let selectedGender = "";
 
@@ -51,12 +51,12 @@ function submitHandler() {
             selectedGender = radio.value;
             break;
         }
-    }
+    };
 
     if (selectedGender === "") {
         ShowAlert("error", "Please select a gender");
         return;
-    }
+    };
 
     // const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -65,33 +65,38 @@ function submitHandler() {
     if (!emailRegex.test(email.value.trim())) {
         ShowAlert("error", "Please Enter A Valid Email")
         return
-    }
+    };
 
     if (password.value.trim() == "") {
         ShowAlert("error", "Please Enter A Password")
         return
-    }
+    };
 
     if (password.value.trim().length < 8) {
         ShowAlert("error", "Please Enter At least 8 character Password")
         return
-    }
+    };
 
-    ShowAlert("success" , "Congratulations!")
+    // ShowAlert("success", "Congratulations!");
+
+    let userData = {
+        firstname: firstname.value.trim(),
+        lastname: lastname.value.trim(),
+        dob: {
+            day: day.value,
+            month: month.value,
+            year: year.value
+        },
+        gender: selectedGender.value,
+        email: email.value.trim(),
+        password: password.value
+    };
+
+    let userDataString = JSON.stringify(userData);
+
+    localStorage.setItem("UserData", userDataString);
+
+    ShowAlert("success", "Account created successfully!");
+    console.log(JSON.parse(localStorage.getItem("UserData")));
 }
 submitbtn.addEventListener("click", submitHandler);
-
-let userData = {
-    firstname : firstname.value.trim(),
-    lastname : lastname.value.trim(),
-    dob: {
-        day : day.value,
-        month : month.value,
-        year : year.value
-    },
-    gender : selectedGender.value,
-    email : email.value.trim(),
-    password : password.value
-}
-
-let userDataString = JSON.stringify(userData)
