@@ -79,6 +79,8 @@ function submitHandler() {
 
     // ShowAlert("success", "Congratulations!");
 
+    let userArry = [];
+
     let userData = {
         firstname: firstname.value.trim(),
         lastname: lastname.value.trim(),
@@ -87,16 +89,20 @@ function submitHandler() {
             month: month.value,
             year: year.value
         },
-        gender: selectedGender.value,
+        gender: selectedGender,
         email: email.value.trim(),
         password: password.value
     };
 
     let userDataString = JSON.stringify(userData);
+    if (userArry = null) {
+        userData = userArry;
+    } else{
+        console.log(JSON.parse(localStorage.getItem("UserData")));
+    }
 
     localStorage.setItem("UserData", userDataString);
 
     ShowAlert("success", "Account created successfully!");
-    console.log(JSON.parse(localStorage.getItem("UserData")));
 }
 submitbtn.addEventListener("click", submitHandler);
