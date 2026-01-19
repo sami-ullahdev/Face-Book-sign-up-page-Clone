@@ -81,7 +81,7 @@ function submitHandler() {
 }
 submitbtn.addEventListener("click", submitHandler);
 
-let userdata = {
+let userData = {
     firstname : firstname.value.trim(),
     lastname : lastname.value.trim(),
     dob: {
@@ -93,3 +93,5 @@ let userdata = {
     email : email.value.trim(),
     password : password.value
 }
+
+let userDataString = JSON.stringify(userData)
