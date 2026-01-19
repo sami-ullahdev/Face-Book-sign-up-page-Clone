@@ -5,34 +5,91 @@ let lastname = document.getElementById("lastname");
 let day = document.getElementById("day");
 let month = document.getElementById("month");
 let year = document.getElementById("year");
-let genders = document.getElementById("genders");
+let genderRadios = document.querySelectorAll('input[name="gender"]');
 let email = document.getElementById("email");
+let password = document.getElementById("password");
 let submitbtn = document.getElementById("submitbtn");
 
-function Alert(icon, title, text) {
+function ShowAlert(icon, text) {
     Swal.fire({
         icon: icon,
-        title: title,
-        text: text,
+        text: text
     });
 }
 
 
 function submitHandler() {
     if (firstname.value.trim() == "") {
-        Alert("error", "", "Enter Your First Name")
+        ShowAlert("error", "Enter Your First Name")
         return
     }
 
     if (lastname.value.trim() == "") {
-        Alert("error", "", "Enter Your Last Name")
+        ShowAlert("error", "Enter Your Last Name")
         return
     }
 
     if (day.value.trim() == "") {
-        Alert("error", "", "Wnter Date")
+        ShowAlert("error", "Enter Date")
         return
     }
-}
 
+    if (month.value.trim() == "") {
+        ShowAlert("error", "Enter Month")
+        return
+    }
+
+    if (year.value.trim() == "") {
+        ShowAlert("error", "Enter Year")
+        return
+    }
+
+    let selectedGender = "";
+
+    for (let radio of genderRadios) {
+        if (radio.checked) {
+            selectedGender = radio.value;
+            break;
+        }
+    }
+
+    if (selectedGender === "") {
+        ShowAlert("error", "Please select a gender");
+        return;
+    }
+
+    // const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+
+    if (!emailRegex.test(email.value.trim())) {
+        ShowAlert("error", "Please Enter A Valid Email")
+        return
+    }
+
+    if (password.value.trim() == "") {
+        ShowAlert("error", "Please Enter A Password")
+        return
+    }
+
+    if (password.value.trim().length < 8) {
+        ShowAlert("error", "Please Enter At least 8 character Password")
+        return
+    }
+
+    ShowAlert("success" , "Congratulations!")
+}
 submitbtn.addEventListener("click", submitHandler);
+
+let userdata = {
+    firstname : firstname.value.trim(),
+    lastname : lastname.value.trim(),
+    dob: {
+        day : day.value,
+        month : month.value,
+        year : year.value
+    },
+    gender : selectedGender.value,
+    email : email.value.trim(),
+    password : password.value
+}
