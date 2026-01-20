@@ -77,9 +77,15 @@ function submitHandler() {
         return
     };
 
-    // ShowAlert("success", "Congratulations!");
+    ShowAlert("success", "Congratulations!");
 
-    let userArry = [];
+    let userArry = localStorage.getItem("UserData")
+
+    if(userArry === null){
+        userArry = [];
+    } else{
+        userArry = JSON.parse(userArry);
+    }
 
     let userData = {
         firstname: firstname.value.trim(),
@@ -94,14 +100,11 @@ function submitHandler() {
         password: password.value
     };
 
-    let userDataString = JSON.stringify(userData);
-    if (userArry = null) {
-        userData = userArry;
-    } else{
-        console.log(JSON.parse(localStorage.getItem("UserData")));
-    }
-
-    localStorage.setItem("UserData", userDataString);
+    userArry.push(userData);
+    
+    localStorage.setItem("UserData", JSON.stringify(userArry));
+    
+    console.log(JSON.parse(localStorage.getItem("UserData")));
 
     ShowAlert("success", "Account created successfully!");
 }
