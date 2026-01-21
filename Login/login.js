@@ -11,3 +11,6 @@ function ShowAlert(icon, text) {
         text: text
     });
 }
+
+
+loginsubmit.addEventListener("click", submitHandler);
