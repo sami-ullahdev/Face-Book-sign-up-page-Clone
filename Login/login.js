@@ -12,5 +12,15 @@ function ShowAlert(icon, text) {
     });
 }
 
+function submitHandler() {
+    if (email.value.trim() == "" || password.value.trim() == "" ) {
+        ShowAlert("error", "Enter Your First Name")
+        return
+    }
+
+    // console.log(JSON.parse(localStorage.getItem("UserData")));
+
+    // ShowAlert("success", "Account created successfully!");
+}
 
 loginsubmit.addEventListener("click", submitHandler);
