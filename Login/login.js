@@ -13,12 +13,16 @@ function ShowAlert(icon, text) {
 }
 
 function submitHandler() {
-    if (email.value.trim() == "" || password.value.trim() == "" ) {
-        ShowAlert("error", "Enter Your First Name")
+    if (email.value.trim() == "") {
+        ShowAlert("error", "Pleaase Enter Your E-mail")
+        return
+    }
+    if(password.value.trim() == "") {
+        ShowAlert("error", "Pleaase Enter Your Passpord")
         return
     }
 
-    // console.log(JSON.parse(localStorage.getItem("UserData")));
+    console.log(JSON.parse(localStorage.getItem("UserData")));
 
     // ShowAlert("success", "Account created successfully!");
 }
