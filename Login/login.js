@@ -13,12 +13,8 @@ function ShowAlert(icon, text) {
 }
 
 function submitHandler() {
-    if (email.value.trim() == "") {
-        ShowAlert("error", "Pleaase Enter Your E-mail")
-        return
-    }
-    if(password.value.trim() == "") {
-        ShowAlert("error", "Pleaase Enter Your Passpord")
+    if (email.value.trim() == "" || password.value.trim() == "") {
+        ShowAlert("error", "Something went wrong Please Enter all fields!")
         return
     }
 
