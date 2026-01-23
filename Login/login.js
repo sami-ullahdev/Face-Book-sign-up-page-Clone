@@ -18,7 +18,10 @@ function submitHandler() {
         return
     }
 
-    console.log(JSON.parse(localStorage.getItem("UserData")));
+    let getUserFromDB = JSON.parse(localStorage.getItem("UserData"));
+
+
+    // console.log(JSON.parse(localStorage.getItem("UserData")));
 
     // ShowAlert("success", "Account created successfully!");
 }
