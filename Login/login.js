@@ -19,7 +19,7 @@ function submitHandler() {
     }
 
     let getUserFromDB = JSON.parse(localStorage.getItem("UserData"));
-    console.log(getUserFromDB);
+    // console.log(getUserFromDB);
 
 
     // console.log(JSON.parse(localStorage.getItem("UserData")));
