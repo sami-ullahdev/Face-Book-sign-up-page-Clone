@@ -13,21 +13,21 @@ function ShowAlert(icon, text) {
 }
 
 function submitHandler() {
-    if (email.value.trim() == "") {
-        return ShowAlert("error", "Please Enter The E-mail")
-        // return ShowAlert("error", "Please Enter The all field")
+    if (email.value.trim() == "" || password.value.trim() == "") {
+        return ShowAlert("error", "Please Enter The all field")
+        // return ShowAlert("error", "Please Enter The E-mail")
     }
 
-    if (password.value.trim() == "") {
-        return ShowAlert("error", "Please Enter The Password")
-    }
+    // if (password.value.trim() == "") {
+    //     return ShowAlert("error", "Please Enter The Password")
+    // }
 
     let getUserFromDB = JSON.parse(localStorage.getItem("userData"));
     // console.log(getUserFromDB);
     let isAccountExist = false;
     // console.log(isAccountExist);
 
-    for (let i = 0; i < getUserFromDB.lenth; i++) {
+    for (let i = 0; i < getUserFromDB.length; i++) {
         let user = getUserFromDB[i]
 
         if (user?.email === email.value) {
