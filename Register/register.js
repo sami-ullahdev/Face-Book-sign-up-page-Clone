@@ -79,7 +79,7 @@ function submitHandler() {
 
     ShowAlert("success", "Congratulations!");
 
-    let userArry = localStorage.getItem("UserData")
+    let userArry = localStorage.getItem("userData")
 
     if(userArry === null){
         userArry = [];
@@ -102,9 +102,9 @@ function submitHandler() {
 
     userArry.push(userData);
     
-    localStorage.setItem("UserData", JSON.stringify(userArry));
+    localStorage.setItem("userData", JSON.stringify(userArry));
     
-    console.log(JSON.parse(localStorage.getItem("UserData")));
+    // console.log(JSON.parse(localStorage.getItem("userData")));
 
     ShowAlert("success", "Account created successfully!");
 }

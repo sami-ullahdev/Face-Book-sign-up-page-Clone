@@ -13,16 +13,44 @@ function ShowAlert(icon, text) {
 }
 
 function submitHandler() {
-    if (email.value.trim() == "" || password.value.trim() == "") {
-        ShowAlert("error", "Something went wrong Please Enter all fields!")
-        return
+    if (email.value.trim() == "") {
+        return ShowAlert("error", "Please Enter The E-mail")
+        // return ShowAlert("error", "Please Enter The all field")
     }
 
-    let getUserFromDB = JSON.parse(localStorage.getItem("UserData"));
+    if (password.value.trim() == "") {
+        return ShowAlert("error", "Please Enter The Password")
+    }
+
+    let getUserFromDB = JSON.parse(localStorage.getItem("userData"));
     // console.log(getUserFromDB);
+    let isAccountExist = false;
+    // console.log(isAccountExist);
 
+    for (let i = 0; i < getUserFromDB.lenth; i++) {
+        let user = getUserFromDB[i]
 
-    // console.log(JSON.parse(localStorage.getItem("UserData")));
+        if (user?.email === email.value) {
+            isAccountExist = true;
+            if (user?.password === password.value) {
+                localStorage.setItem("userData", JSON.stringify(user));
+                // ShowAlert("error", "Login Sucessful");
+                alert("LOgin sucessful")
+                window.location.href = "../Dashboard/";
+            }
+            else {
+                ShowAlert("error", "SomeThing is Worng")
+            }
+            break;
+        }
+    };
+    
+
+    if (isAccountExist === false) {
+        ShowAlert("error", "User Does't Exists")
+    }
+
+    // console.log(JSON.parse(localStorage.getItem("userData")));
 
     // ShowAlert("success", "Account created successfully!");
 }
