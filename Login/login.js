@@ -35,8 +35,8 @@ function submitHandler() {
             if (user?.password === password.value) {
                 localStorage.setItem("userData", JSON.stringify(user));
                 // ShowAlert("error", "Login Sucessful");
-                alert("LOgin sucessful")
-                window.location.href = "../Dashboard/";
+                alert("Login sucessful")
+                window.location.href = "../Dashboard";
             }
             else {
                 ShowAlert("error", "SomeThing is Worng")
@@ -44,7 +44,7 @@ function submitHandler() {
             break;
         }
     };
-    
+
 
     if (isAccountExist === false) {
         ShowAlert("error", "User Does't Exists")
