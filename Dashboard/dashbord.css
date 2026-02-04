@@ -19,7 +19,7 @@ header {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     padding: 5px 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -29,34 +29,34 @@ header {
 }
 
 .search-input {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background-color: #eeeeee;
-  padding-left: 8px;
-  border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #eeeeee;
+    padding-left: 8px;
+    border-radius: 50px;
 }
 
-.search-input > input {
-  border: none;
-  outline: none;
-  width: 150px;
-  background-color: transparent;
+.search-input>input {
+    border: none;
+    outline: none;
+    width: 150px;
+    background-color: transparent;
 }
 
 .search-input i {
-  color: gray;
+    color: gray;
 }
 
 .search-input input::placeholder {
-  color: gray;
-  font-size: 11px;    
+    color: gray;
+    font-size: 11px;
 }
 
 .center-header {
     display: flex;
-    flex: 1;
     justify-content: center;
+    align-items: center;
 }
 
 .all-pages-icons {
@@ -64,15 +64,23 @@ header {
     cursor: pointer;
 }
 
-.home , .friend  , .reels , .marketplace , .groups {
+.home,
+.friend,
+.reels,
+.marketplace,
+.groups {
     display: flex;
     justify-content: center;
     padding: 7px;
-    width: 100px;
+    width: 120px;
     border-radius: 5px;
 }
 
-.home:hover , .friend:hover  , .reels:hover , .marketplace:hover , .groups:hover {
+.home:hover,
+.friend:hover,
+.reels:hover,
+.marketplace:hover,
+.groups:hover {
     display: flex;
     justify-content: center;
     padding: 7px;
@@ -89,13 +97,48 @@ header {
     cursor: pointer;
 }
 
-.right-header > .btn-backgroung {
+.right-header>.btn-backgroung {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     background-color: var(--background-color);
     border-radius: 50%;
 }
 
+
+/* Started main section */
+
+main {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+main>.main-left {
+    width: 300px;
+    max-width: 300px;
+}
+
+
+main>.main-center {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-center>.create-post {
+    padding: 10px;
+    background-color: #000;
+    width:  500px;
+}
+
+main>.main-right {
+    background-color: #000;
+    width: 300px;
+    max-width: 300px;
+
+}
