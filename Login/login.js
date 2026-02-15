@@ -33,9 +33,10 @@ function submitHandler() {
         if (user?.email === email.value) {
             isAccountExist = true;
             if (user?.password === password.value) {
-                localStorage.setItem("userData", JSON.stringify(user));
+                console.log(user);
+                localStorage.setItem("user", JSON.stringify(user));
                 // ShowAlert("error", "Login Sucessful");
-                alert("Login sucessful")
+                ShowAlert("error", "Login Sucessful")
                 window.location.href = "../Dashboard";
             }
             else {
