@@ -110,7 +110,8 @@ header {
 }
 
 
-/* Started main section */
+/* Started main  section */
+/* Started main Left section */
 
 main {
     display: flex;
@@ -123,7 +124,6 @@ main>.main-left {
     margin-left: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
-    height: 500px;
     overflow-y: auto;
 }
 
@@ -140,10 +140,62 @@ main>.main-left {
     border-radius: 10px;
 }
 
-/* On hover → visible */
 .main-left:hover::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.3);
 }
+
+/* Main-left-Top Start */
+
+.main-left-top {
+    height: 500px;
+    overflow-y: auto;
+}
+
+.main-left-top::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main-left-top::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.main-left-top::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.main-left-top:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Main-left-Top End */
+
+/* Main-left-Bottom Start */
+
+.shortscuts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-left-bottom {
+    margin-top: 10px;
+    height: 100px;
+    overflow-y: auto;
+}
+
+.main-left-bottom>.shortscuts>h3 {
+    margin-left: 10px;
+}
+
+.main-left-bottom>.shortscuts>span {
+    margin-right: 10px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Main-left-Bottom Ends */
+
 .disply-flex {
     display: flex;
     align-items: center;

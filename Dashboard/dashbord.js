@@ -2,6 +2,7 @@ let mainLeft = document.querySelector(".main-left");
 let seemoreseeless = document.querySelector(".see-more-see-less");
 let seemoreseelessLabel = document.querySelector(".see-more-see-less-label");
 
+
 let mainleftexpend = `<div class="expended-section">
             <div class="disply-flex">
                 <img src="../Assets/images/profile pic.png" alt="profile picture" width="35px" height="35px">
@@ -67,4 +68,5 @@ function seemoreseelessmainleft() {
     }
 }
 
-seemoreseeless.addEventListener("click", seemoreseelessmainleft);
+
+seemoreseelessLabel.addEventListener("click", seemoreseelessmainleft);
