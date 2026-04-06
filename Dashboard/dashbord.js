@@ -165,4 +165,7 @@ storyContainer.innerHTML = returyarr.join("");
 createStoryHTMLtThroughtMap();
 
 
+
+
+
 seemoreseelessLabel.addEventListener("click", seemoreseelessmainleft);
